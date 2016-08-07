@@ -86,7 +86,7 @@ window.onload = function (){
 	var daysInBlog = [juneEighteen, juneNineteen, juneTwenty, juneTwentyTwo, juneTwentyTwo, juneTwentyThree, juneTwentyFour, juneTwentyFive, juneTwentySix]
 
 	function makeFoodHTML(date){
-		return '<div class="foodDayContainer"> ' + date.title + 
+		return '<div class="foodDayContainer">' + date.title + 
 					'<ul>'+
 						'<li>'+
 							'<img src="' + date.meals.breakfast.img + '" />'+
@@ -118,18 +118,17 @@ window.onload = function (){
 		return dayString;
 	}
 	
-	$(".month")[0].innerHTML = makeTitle(daysInBlog[0]);
 	$("#mealDataContainer").html(makeHTMLForAllDays(daysInBlog));
 
 	var dayDivs = $('#mealDataContainer').children('.foodDayContainer')
-console.log("dayDivs count: " + dayDivs.length);
+	var headerTextToShowWhenFullCalendarIsVisible = "June 2016";
 
 	$(".days .dateCell").click(function(){
 
 		$("#backButton").removeClass("hide");
 		$("#calendar").addClass("hide");
 		$("#mealDataContainer").removeClass("hide");
-
+	
 		var buttonIndex = $(this).index() - $(".days .empty").length;
 		// the array $(".days .dateCell") returns li's that maintain their original index() positions
 		// corrects for empty li's at beginning.
@@ -137,14 +136,17 @@ console.log("dayDivs count: " + dayDivs.length);
 		console.log('index clicked: ' + buttonIndex);
 		
 		var activeDay = dayDivs.eq(buttonIndex);
+		$("#monthTitle").html(daysInBlog[buttonIndex].title);
 		activeDay.removeClass("hide");
 		dayDivs.not(activeDay).addClass("hide");
 		// debugger;
 	});
 
 	$("#backButton").click(function(){
+		$("#monthTitle").html(headerTextToShowWhenFullCalendarIsVisible);
 		$("#calendar").removeClass("hide");
 		$("#mealDataContainer").addClass("hide");
+		$(this).addClass("hide");
 	});
 
 }

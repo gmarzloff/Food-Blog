@@ -54,6 +54,14 @@ table {
   zoom: 1;
 }
 
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
 /*My code */
 body {
 	background-image: url(../IMG/background.jpg);
@@ -110,6 +118,10 @@ li.hover:hover {
 .hide {
     visibility: hidden;
     height: 0;
+    width: 0;
+}
+.empty {
+    height: auto;
 }
 
 #calendarHeader {
@@ -238,6 +250,6 @@ li.hover:hover {
     display: inline-block;
     text-align: center;
     background-color: white;
-    padding: 20px;
-    margin:5px;
+    /*padding: 20px;*/
+    /*margin:5px;*/
 }
