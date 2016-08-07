@@ -96,22 +96,44 @@ a:hover {
 }
 
 li.hover {
-    transition: all 1s, linear;
+    /*transition: all 1s, linear;*/
 }
 
 li.hover:hover {
 	background-color: #008000;
+    color: white;
 }
 
 
 
 /*Calendar*/
+.hide {
+    visibility: hidden;
+    height: 0;
+}
 
-.month {
-    padding: 20px 0px;
+#calendarHeader {
     background: #008000;
     margin-left: 200px;
     margin-right: 200px;
+}
+#backButton {
+    position: absolute;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 20px 0  0 15px;
+    color: #fff;
+}
+#backButton:hover{
+    cursor: pointer;
+    background-color: #0e0;
+    color: #080;
+}
+
+.month {
+    padding: 20px 0px;
+
 }
 
 .month h1 {
@@ -132,6 +154,7 @@ li.hover:hover {
     background-color:#ddd;
     margin-left: 200px;
     margin-right: 200px;
+
 }
 
 .weekdays li {
@@ -139,6 +162,7 @@ li.hover:hover {
     width: 13%;
     color: #666;
     text-align: center;
+
 }
 
 .days {
@@ -147,6 +171,7 @@ li.hover:hover {
     margin: 0 auto;
     margin-left: 200px;
     margin-right: 200px;
+
 }
 
 .days li {
@@ -155,7 +180,9 @@ li.hover:hover {
     text-align: center;
     margin-bottom: 5px;
     font-size:16px;
-    color: gray;
+    color: gray;    
+    padding-bottom: 35px;
+    padding-top: 35px;
 }
 
 /*Blog Layout*/
@@ -170,6 +197,10 @@ li.hover:hover {
      text-align: center;
      color: white;
      font-size: 30px;
+}
+
+#mealContainer {
+
 }
 
 .meal-encompass {
