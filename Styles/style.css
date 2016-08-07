@@ -202,3 +202,11 @@ li.hover:hover {
     padding-top: 20px;
     text-align: center;
 }
+
+.foodDayContainer {
+    display: inline-block;
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    margin:5px;
+}

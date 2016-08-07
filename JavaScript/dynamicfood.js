@@ -105,7 +105,7 @@ window.onload = function (){
 	}
 
 	function makeTitle(day){
-		return '<div class="month">' + day.title + '</div>';
+		return '<h1>' + day.title + '</h1>';
 	}
 
 	function makeHTMLForAllDays(days){
